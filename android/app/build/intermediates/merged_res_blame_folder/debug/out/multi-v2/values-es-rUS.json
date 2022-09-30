@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/appletech/Desktop/WNB/WNB/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "/Users/appletech/Documents/Wnb-Application/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
                     "source": "/Users/appletech/.gradle/caches/transforms-3/557efa2e75ea35e1848cf2d1c63daf8e/transformed/core-1.7.0/res/values-es-rUS/values-es-rUS.xml",

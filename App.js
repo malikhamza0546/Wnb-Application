@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React,{useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -16,7 +16,7 @@ import {
   useColorScheme,
   View,NativeModules
 } from 'react-native';
-const {StepCounterModule} = NativeModules;
+const {PedometerAndroid} = NativeModules;
 import {
   Colors,
   DebugInstructions,
@@ -24,29 +24,31 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import health from "./health.android";
 
 const App=() => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  const Test=()=>{
-    StepCounterModule.sayHello("Hamza",(error,message)=>{
-      if(error){
-        console.log("error",error)
-      }
-      else{
-        console.log(message)
-      }
-    })
-  }
+  
+  
+  // const Test1=()=>{
+  //   console.log("Hamza")
+  // }
+  // const Test=()=>{
+  //   console.log("Hamza")
+  // }
+  
+  useEffect(()=>{
+    health().then((data) => {
+     console.log(data,"Data")
+    }).catch((err) => {
+      console.log(err);
+    });
+  })
+  
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={{backgroundColor:"white"}}>
       <View>
-        <Text onPress={Test}>Hello World</Text>
+        <Text> Hello World</Text>
       </View>
       
       

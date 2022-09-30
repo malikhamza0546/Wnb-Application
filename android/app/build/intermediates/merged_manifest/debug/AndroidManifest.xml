@@ -10,6 +10,14 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepdetector"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
@@ -38,6 +46,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="com.wnb.pedometer.StepCounterService" />
+        <service android:name="com.wnb.pedometer.StepCounterOldService" />
+
+        <receiver
+            android:name="com.wnb.pedometer.StepCounterBootReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <provider
             android:name="androidx.startup.InitializationProvider"

@@ -1,5 +1,7 @@
 package com.wnb;
 
+import androidx.annotation.NonNull;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -9,7 +11,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class StepCounterpackage implements ReactPackage {
+public class RNPedometerPackage implements ReactPackage {
+
+
+    @NonNull
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
@@ -20,7 +25,7 @@ public class StepCounterpackage implements ReactPackage {
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new StepCounterModule(reactContext));
+        modules.add(new RNPedometerModule(reactContext));
 
         return modules;
     }
